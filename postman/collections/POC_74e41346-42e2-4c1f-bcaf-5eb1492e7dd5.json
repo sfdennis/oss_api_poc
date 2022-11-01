@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "02f3261e-045b-4f55-b009-803fb6fa94be",
+		"name": "POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Studio Ghibli API",
+			"item": [
+				{
+					"name": "Does it have Cats?",
+					"item": [
+						{
+							"name": "Get Princess Mononoke",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "57616b2b-c1e8-423b-9881-94eb2e4b23d4",
+										"exec": [
+											"var cat_id_string = pm.collectionVariables.get(\"cat_id\")",
+											"var movie_title = pm.collectionVariables.get(\"movie_title\")",
+											"",
+											"pm.test(\"Is this \"+ movie_title +\"?\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData[0].title, \"No it is not!\").to.eql(movie_title);",
+											"});",
+											"",
+											"pm.test(\"Does it have cats?\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData[0].species, \"It does not have cats!?\").to.include(cat_id_string);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2e760872-090d-454d-ad76-ddd1d43e1171",
+										"exec": [
+											"pm.collectionVariables.set(\"movie_title\", \"Princess Mononoke\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "61a42276-0ec2-46f0-8cbb-773083733fc5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{StudioGlibliURL}}/films?title={{movie_title}}",
+									"host": [
+										"{{StudioGlibliURL}}"
+									],
+									"path": [
+										"films"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "{{movie_title}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Kiki's Delivery Service",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "57616b2b-c1e8-423b-9881-94eb2e4b23d4",
+										"exec": [
+											"var cat_id_string = pm.collectionVariables.get(\"cat_id\")",
+											"var movie_title = pm.collectionVariables.get(\"movie_title\")",
+											"",
+											"pm.test(\"Is this \"+ movie_title +\"?\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData[0].title, \"No it is not!\").to.eql(movie_title);",
+											"});",
+											"",
+											"pm.test(\"Does it have cats?\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData[0].species, \"It does not have cats!?\").to.include(cat_id_string);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2e760872-090d-454d-ad76-ddd1d43e1171",
+										"exec": [
+											"pm.collectionVariables.set(\"movie_title\", \"Kiki's Delivery Service\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "c8879ec1-8f61-4d72-abff-a4dce42862d8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{StudioGlibliURL}}/films?title={{movie_title}}",
+									"host": [
+										"{{StudioGlibliURL}}"
+									],
+									"path": [
+										"films"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "{{movie_title}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get My Neighbor Totoro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "57616b2b-c1e8-423b-9881-94eb2e4b23d4",
+										"exec": [
+											"var cat_id_string = pm.collectionVariables.get(\"cat_id\")",
+											"var movie_title = pm.collectionVariables.get(\"movie_title\")",
+											"",
+											"pm.test(\"Is this \"+ movie_title +\"?\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData[0].title, \"No it is not!\").to.eql(movie_title);",
+											"});",
+											"",
+											"pm.test(\"Does it have cats?\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData[0].species, \"It does not have cats!?\").to.include(cat_id_string);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2e760872-090d-454d-ad76-ddd1d43e1171",
+										"exec": [
+											"pm.collectionVariables.set(\"movie_title\", \"My Neighbor Totoro\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "9970ae04-cd86-4a43-a7c3-5037e4d62123",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{StudioGlibliURL}}/films?title={{movie_title}}",
+									"host": [
+										"{{StudioGlibliURL}}"
+									],
+									"path": [
+										"films"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "{{movie_title}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "a20bfeb5-5754-496f-bbcd-759e11c0c998",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b6c6c754-5edf-471a-8779-7fe55ce6d0ec",
+								"type": "text/javascript",
+								"exec": [
+									"var myEnv = pm.globals.get('StudioGlibliURL');",
+									"var MyUrl = myEnv + '/species?name=Cat'",
+									"",
+									"pm.sendRequest(MyUrl, function (err, response) {",
+									"    var jsonCatData = response.json();",
+									"    var cat_id = jsonCatData[0].id",
+									"    var cat_id_string = myEnv + \"/species/\" + cat_id",
+									"    pm.collectionVariables.set(\"cat_id\", cat_id_string) ",
+									"    //console.log(cat_id_string)",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "563644a2-e392-4d12-b1ad-65b6a78a4f6b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Get all Ghibli films",
+					"id": "a571c6a4-b89d-4e1d-a178-56d7b6098765",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{StudioGlibliURL}}/films",
+							"host": [
+								"{{StudioGlibliURL}}"
+							],
+							"path": [
+								"films"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "57616b2b-c1e8-423b-9881-94eb2e4b23d4",
+								"exec": [
+									"pm.test(\"Is this a cat\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[0].name).to.eql(\"Cat\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2e760872-090d-454d-ad76-ddd1d43e1171",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "260e22fa-2efc-4467-b884-a7d4e08401df",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{StudioGlibliURL}}/species?name=Cat",
+							"host": [
+								"{{StudioGlibliURL}}"
+							],
+							"path": [
+								"species"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Cat"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "ce6dac65-cdd0-4c8d-b438-a279fd4b1e21",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8c3d5b77-7d1b-464d-982c-72231cf9e5a8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.globals.set(\"StudioGlibliURL\", \"https://ghibliapi.herokuapp.com\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ead7c982-5d42-4a30-925f-235ec6684431",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d9ea7ef2-d654-4907-85e9-1fef494517a4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "344248c5-eeab-43d0-9252-2802f999b08b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "bd0c4e16-0825-4956-a7c3-8900a215ceca",
+			"key": "StudioGlibliURL",
+			"value": "https://ghibliapi.herokuapp.com",
+			"type": "string"
+		},
+		{
+			"id": "b57d0566-b38d-4c43-ae75-f97c97a475d5",
+			"key": "cat_id",
+			"value": ""
+		},
+		{
+			"id": "9fd05098-a4eb-4d87-82b6-7a5334ccc472",
+			"key": "movie_title",
+			"value": ""
+		}
+	]
+}
